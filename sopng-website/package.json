@@ -1,0 +1,22 @@
+{
+  "name": "sopng-website",
+  "version": "1.0.0",
+  "description": "Website for Special Olympics Papua New Guinea, including fundraising and marketing pages.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process not defined'",
+    "test": "echo 'No tests defined'"
+  },
+  "keywords": [
+    "special-olympics",
+    "fundraising",
+    "marketing",
+    "website"
+  ],
+  "author": "Alfred Wunum",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

@@ -1,0 +1,55 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #343a40;
+}
+
+.marketing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.marketing-campaign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.marketing-campaign img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.marketing-campaign h3 {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.marketing-description {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.btn-learn-more {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn-learn-more:hover {
+    background-color: #0056b3;
+}
