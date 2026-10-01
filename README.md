@@ -11,8 +11,8 @@ Open the homepage in a browser, or serve this folder with any static web server.
 - Home
 - About and history
 - Programs directory with five dedicated program detail pages
-- Community moments
-- Volunteering, partnership and giving enquiries
+- Events and community highlights
+- Donation, volunteer and partnership enquiries
 - Contact details
 
 Older program URLs redirect to their matching detail pages; other archived page URLs point to relevant sections of the new site.
