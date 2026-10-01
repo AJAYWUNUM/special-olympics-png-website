@@ -10,12 +10,12 @@ Open the homepage in a browser, or serve this folder with any static web server.
 
 - Home
 - About and history
-- Five programs
+- Programs directory with five dedicated program detail pages
 - Community moments
 - Volunteering, partnership and giving enquiries
 - Contact details
 
-Older page URLs point to the relevant page in the new site.
+Older program URLs redirect to their matching detail pages; other archived page URLs point to relevant sections of the new site.
 
 ## Content and imagery
 
@@ -25,7 +25,6 @@ The archived email address is retained as written in the source: specialoplymics
 
 ## Files
 
-- site.css â€” layout, colors, responsive styles and reduced-motion support
-- site.js â€” mobile navigation and current-year footer
-- assets â€” SOPNG logo, favicon and optimized program photographs
-
+- site.css — layout, colors, responsive styles and reduced-motion support
+- site.js — mobile navigation and current-year footer
+- assets — SOPNG logo, favicon and optimized program photographs
