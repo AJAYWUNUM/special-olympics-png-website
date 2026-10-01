@@ -409,9 +409,11 @@ h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -.025em; }
   .section-heading-aside p { margin-bottom: 12px; font-size: 13px; }
   .program-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .program-card, .program-card-feature { grid-column: span 1; }
+  .program-card:nth-child(2) { grid-column: span 1; }
   .program-card-feature:first-child { grid-column: span 2; }
   .card-image, .program-card-feature .card-image { height: 158px; }
   .program-card-feature .card-image { height: 205px; }
+  .program-card:nth-child(2) .card-image { height: 158px; }
   .card-copy { min-height: 117px; padding: 15px 34px 16px 13px; }
   .card-kicker { font-size: 8px; letter-spacing: .07em; }
   .card-copy h3 { font-size: 18px; }
