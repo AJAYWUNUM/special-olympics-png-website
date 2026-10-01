@@ -1,34 +1,7 @@
 "use strict";
-
-const menuButton = document.querySelector(".menu-toggle");
-const navigation = document.querySelector(".primary-navigation");
-
-if (menuButton && navigation) {
-  const closeMenu = () => {
-    menuButton.setAttribute("aria-expanded", "false");
-    navigation.classList.remove("is-open");
-  };
-
-  menuButton.addEventListener("click", () => {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    navigation.classList.toggle("is-open", !isOpen);
-  });
-
-  navigation.addEventListener("click", (event) => {
-    if (event.target.closest("a")) closeMenu();
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!navigation.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
-  });
-}
-
-document.querySelectorAll("[data-current-year]").forEach((node) => {
-  node.textContent = String(new Date().getFullYear());
-});
-
+const menuButton=document.querySelector(".menu-toggle");
+const navigation=document.querySelector(".primary-navigation");
+if(menuButton&&navigation){const closeMenu=()=>{menuButton.setAttribute("aria-expanded","false");navigation.classList.remove("is-open")};menuButton.addEventListener("click",()=>{const open=menuButton.getAttribute("aria-expanded")==="true";menuButton.setAttribute("aria-expanded",String(!open));navigation.classList.toggle("is-open",!open)});navigation.addEventListener("click",e=>{if(e.target.closest("a"))closeMenu()});document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeMenu();document.querySelector(".nav-dropdown[open]")?.removeAttribute("open")}});document.addEventListener("click",e=>{if(!navigation.contains(e.target)&&!menuButton.contains(e.target))closeMenu()})}
+document.querySelectorAll("[data-current-year]").forEach(el=>el.textContent=String(new Date().getFullYear()));
+if(new URLSearchParams(window.location.search).get("sent")==="1"){document.querySelectorAll("[data-form-success]").forEach(message=>message.hidden=false)}
+document.querySelectorAll("[data-carousel]").forEach(carousel=>{const slides=[...carousel.querySelectorAll("[data-slide]")];const dots=[...carousel.querySelectorAll("[data-slide-to]")];const prev=carousel.querySelector("[data-carousel-prev]");const next=carousel.querySelector("[data-carousel-next]");const pause=carousel.querySelector("[data-carousel-pause]");if(slides.length<2)return;let index=0;let timer=null;let paused=window.matchMedia("(prefers-reduced-motion: reduce)").matches;const show=n=>{index=(n+slides.length)%slides.length;slides.forEach((slide,i)=>{slide.classList.toggle("is-active",i===index);slide.setAttribute("aria-hidden",String(i!==index))});dots.forEach((dot,i)=>{dot.setAttribute("aria-current",String(i===index))})};const stop=()=>{if(timer)window.clearInterval(timer);timer=null};const start=()=>{stop();if(!paused)timer=window.setInterval(()=>show(index+1),6000)};prev?.addEventListener("click",()=>{show(index-1);start()});next?.addEventListener("click",()=>{show(index+1);start()});dots.forEach((dot,i)=>dot.addEventListener("click",()=>{show(i);start()}));pause?.addEventListener("click",()=>{paused=!paused;pause.setAttribute("aria-pressed",String(paused));pause.textContent=paused?"Play":"Pause";start()});carousel.addEventListener("mouseenter",stop);carousel.addEventListener("mouseleave",start);carousel.addEventListener("focusin",stop);carousel.addEventListener("focusout",start);start()});
