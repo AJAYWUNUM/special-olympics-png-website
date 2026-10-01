@@ -535,3 +535,28 @@ h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -.025em; }
   .program-page-all { grid-column: 1 / -1; grid-row: 1; }
   .program-page-neighbor-next { grid-column: 2; }
 }
+
+
+/* All-pages navigation dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown > summary { display: inline-flex; align-items: center; gap: 8px; list-style: none; color: var(--ink-soft); font-size: 13px; font-weight: 700; cursor: pointer; }
+.nav-dropdown > summary::-webkit-details-marker { display: none; }
+.nav-dropdown > summary::after { width: 7px; height: 7px; transform: translateY(-2px) rotate(45deg); border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; content: ""; transition: transform .18s ease; }
+.nav-dropdown[open] > summary::after { transform: translateY(2px) rotate(225deg); }
+.nav-dropdown > summary:hover, .nav-dropdown > summary:focus-visible { color: var(--red-dark); }
+.nav-dropdown > summary:focus-visible, .nav-dropdown-menu a:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.nav-dropdown-menu { position: absolute; z-index: 60; top: calc(100% + 20px); right: -18px; width: min(490px, calc(100vw - 32px)); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 19px; border: 1px solid var(--line); border-radius: 4px; background: var(--white); box-shadow: 0 16px 34px #10202020; }
+.nav-dropdown-group { display: grid; align-content: start; gap: 3px; }
+.nav-dropdown-heading { padding: 0 9px 5px; color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.nav-dropdown-group a { padding: 7px 9px; border-radius: 3px; color: var(--ink-soft); font-size: 12px; font-weight: 650; line-height: 1.4; }
+.nav-dropdown-group a:hover, .nav-dropdown-group a[aria-current="page"] { color: var(--red-dark); background: #f7f4ed; }
+@media (max-width: 980px) {
+  .nav-dropdown > summary { font-size: 12px; }
+}
+@media (max-width: 720px) {
+  .primary-navigation > .nav-dropdown { width: 100%; border-bottom: 1px solid var(--line); }
+  .nav-dropdown > summary { width: 100%; justify-content: space-between; padding-block: 11px; font-size: 14px; }
+  .nav-dropdown-menu { position: static; width: 100%; grid-template-columns: 1fr 1fr; gap: 12px; padding: 5px 0 13px; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .nav-dropdown-group a { padding: 7px 8px; font-size: 11px; }
+  .primary-navigation .nav-cta { margin-top: 13px; }
+}
