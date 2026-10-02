@@ -196,3 +196,18 @@
  .volunteer-card-copy p{font-size:11px}
 }
 @media(max-width:370px){.volunteer-grid{grid-template-columns:1fr}.volunteer-card-photo{aspect-ratio:1/1.12}}
+
+/* Homepage-only, three-second welcome greeting */
+.welcome-popup{position:fixed;z-index:80;inset:0;display:grid;place-items:center;padding:22px;pointer-events:none;animation:welcome-disappear 3s ease .12s forwards}
+.welcome-popup-card{position:relative;width:min(420px,calc(100vw - 44px));padding:27px 30px;border:1px solid #f1d9d4;border-radius:12px;background:var(--white);box-shadow:0 18px 55px #401c2433;text-align:center;animation:welcome-card-pop 3s ease .12s forwards}
+.welcome-popup-card p{margin:0;color:var(--ink);font-family:var(--serif);font-size:clamp(24px,5vw,34px);line-height:1.22;letter-spacing:-.035em}
+.welcome-spark{display:block;margin-bottom:6px;color:var(--red);font-size:22px}
+.welcome-hearts{position:absolute;inset:0;overflow:hidden}
+.welcome-hearts span{position:absolute;top:50%;left:50%;color:var(--heart-color,var(--red));font-size:25px;line-height:1;text-shadow:0 3px 8px #c93d4a20;opacity:0;animation:heart-burst 2.85s cubic-bezier(.16,.82,.28,1) var(--heart-delay,0s) forwards}
+.welcome-hearts span:nth-child(3n){color:#e56b84;font-size:21px}
+.welcome-hearts span:nth-child(3n + 1){color:#cc3349;font-size:28px}
+@keyframes heart-burst{0%{opacity:0;transform:translate(-50%,-50%) scale(.25) rotate(-18deg)}12%{opacity:1;transform:translate(-50%,-50%) scale(1.2) rotate(8deg)}48%,78%{opacity:1;transform:translate(calc(-50% + var(--heart-x)),calc(-50% + var(--heart-y))) scale(1) rotate(0)}100%{opacity:0;transform:translate(calc(-50% + var(--heart-x)),calc(-50% + var(--heart-y))) scale(.65) rotate(18deg)}}
+@keyframes welcome-card-pop{0%,100%{opacity:0;transform:scale(.88)}10%{opacity:1;transform:scale(1.035)}17%,78%{opacity:1;transform:scale(1)}}
+@keyframes welcome-disappear{0%,78%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.welcome-hearts{display:none}.welcome-popup,.welcome-popup-card{animation-duration:3s;animation-timing-function:linear}}
+@media(max-width:480px){.welcome-popup-card{padding:23px 19px}.welcome-hearts span{font-size:22px}}
