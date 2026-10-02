@@ -7,9 +7,10 @@ A new responsive, multi-page website inspired by the clear programs, impact and 
 - Home page with an accessible, automatically sliding image carousel.
 - About SOPNG and Programs overview.
 - A separate page for Sports & Competition, Young Athletes, Family Support Network, Healthy Communities and Youth Innovation.
+- A Volunteers & Leadership page with the supplied 25 volunteer portraits. Name and position fields are placeholders for the roster details SOPNG will add later.
 - Events, Donate and Contact pages.
 
-The All pages menu links to every page above. Each editorial photograph is used on only one page. The organization logo and favicon are shared identity assets.
+The All pages menu links to every page above. Athlete profiles are kept separate from the volunteer directory. Each editorial photograph is used on only one page. The organization logo and favicon are shared identity assets.
 
 Older page URLs redirect to their matching new page so bookmarks and links still resolve.
 
@@ -32,5 +33,6 @@ Do not preview the site by opening `index.html` from inside the ZIP. Extract it 
 ## Maintenance notes
 
 - Update `form-config.php` if SOPNG changes the contact inbox.
+- Update the placeholder names and positions in `volunteers.html` when the volunteer roster is ready.
 - The Events page deliberately asks visitors to contact SOPNG for current event dates; no calendar or event schedule was supplied for this redesign.
 - The Donate page collects enquiries only. It does not collect payment details or process donations online.
