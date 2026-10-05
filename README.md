@@ -8,7 +8,7 @@ A new responsive, multi-page website inspired by the clear programs, impact and 
 - About SOPNG and Programs overview.
 - A separate page for Sports & Competition, Young Athletes, Family Support Network, Healthy Communities and Youth Innovation.
 - A Volunteers & Leadership page with the supplied 25 volunteer portraits. Name and position fields are placeholders for the roster details SOPNG will add later.
-- Events, Donate and Contact pages.
+- Events, Marketplace, Donate and Contact pages. The Marketplace displays SOPNG products and sends price, size and availability enquiries to the team; it does not process online payments.
 
 The All pages menu links to every page above. Athlete profiles are kept separate from the volunteer directory. Each editorial photograph is used on only one page. The organization logo and favicon are shared identity assets.
 
@@ -16,7 +16,7 @@ Older page URLs redirect to their matching new page so bookmarks and links still
 
 ## Contact forms
 
-The Contact, Events and Donate pages have forms. The forms submit to `contact.php`, which validates the fields and emails the enquiry to `info@specialolympicspapuanewguinea.org`. The receiving inbox was supplied by SOPNG for this site. Enquiries are not saved in a website database.
+The Contact, Events, Marketplace and Donate pages have forms. The forms submit to `contact.php`, which validates the fields and emails the enquiry to `info@specialolympicspapuanewguinea.org`. The receiving inbox was supplied by SOPNG for this site. Enquiries are not saved in a website database.
 
 The form handler uses PHP's `mail()` function. Hostinger must have outbound PHP email enabled for the messages to be delivered. If Hostinger does not deliver the messages, configure the account's recommended SMTP mailer before launch.
 
@@ -33,6 +33,8 @@ Do not preview the site by opening `index.html` from inside the ZIP. Extract it 
 ## Maintenance notes
 
 - Update `form-config.php` if SOPNG changes the contact inbox.
+- Marketplace listings do not include prices or an online checkout. Confirm prices, sizes, availability and ordering details with the SOPNG team.
 - Update the placeholder names and positions in `volunteers.html` when the volunteer roster is ready.
 - The Events page deliberately asks visitors to contact SOPNG for current event dates; no calendar or event schedule was supplied for this redesign.
 - The Donate page collects enquiries only. It does not collect payment details or process donations online.
+
