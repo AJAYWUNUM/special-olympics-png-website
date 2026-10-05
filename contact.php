@@ -34,6 +34,7 @@ $allowedReturns = [
     'contact.html?sent=1#contact-form',
     'events.html?sent=1#event-interest',
     'donate.html?sent=1#support-form',
+    'marketplace.html?sent=1#marketplace-enquiry',
 ];
 if (!in_array($returnTo, $allowedReturns, true)) {
     $returnTo = 'contact.html?sent=1#contact-form';
@@ -92,3 +93,4 @@ if (!$sent) {
 
 header('Location: ' . $returnTo);
 exit;
+
