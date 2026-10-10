@@ -1,40 +1,30 @@
 # Special Olympics Papua New Guinea website
 
-A new responsive, multi-page website inspired by the clear programs, impact and story structure of [Special Olympics Bharat](https://specialolympicsbharat.org/), with SOPNG's own identity and copy.
+A responsive, multi-page website for Special Olympics Papua New Guinea. It includes separate pages for the five programs, events, donations, contact, volunteers and the merchandise marketplace. The home page has a rotating photo carousel, newsletter sign-up and a small page guide that helps visitors find the right section.
 
-## Pages
+## Forms and database
 
-- Home page with an accessible, automatically sliding image carousel.
-- About SOPNG and Programs overview.
-- A separate page for Sports & Competition, Young Athletes, Family Support Network, Healthy Communities and Youth Innovation.
-- A Volunteers & Leadership page with the supplied 25 volunteer portraits. Name and position fields are placeholders for the roster details SOPNG will add later.
-- Events, Marketplace, Donate and Contact pages. The Marketplace displays SOPNG products and sends price, size and availability enquiries to the team; it does not process online payments.
+Contact, Events, Marketplace and Donate enquiries are saved in the `website_enquiries` MySQL table. Newsletter sign-ups are saved in `newsletter_subscribers`; the newsletter form asks for consent, sends a welcome email to the subscriber, and includes an unsubscribe link. The website does not email enquiry details directly to the SOPNG inbox. SOPNG can view records in Hostinger's phpMyAdmin.
 
-The All pages menu links to every page above. Athlete profiles are kept separate from the volunteer directory. Each editorial photograph is used on only one page. The organization logo and favicon are shared identity assets.
+The package is ready for a Hostinger MySQL database, but it cannot connect until the database is created and the credentials are added. Before launch:
 
-Older page URLs redirect to their matching new page so bookmarks and links still resolve.
+1. In Hostinger hPanel, create a MySQL database and user under **Databases → Management**. Keep the database name, user name and password private.
+2. In phpMyAdmin, select that database and import `database-schema.sql`.
+3. In Hostinger File Manager, edit `database-config.php` with the database details, the website's HTTPS address, and a sender email address hosted on your domain. Do not put real credentials into GitHub or share them in chat.
+4. Configure Hostinger email sending for the sender address. The newsletter uses PHP `mail()`; if welcome messages do not arrive, set up authenticated SMTP for the site's domain mailbox.
+5. Submit a contact enquiry and a newsletter subscription on the live HTTPS site. Confirm the two records appear in their database tables and the welcome email arrives.
 
-## Contact forms
+Until these Hostinger settings are completed, forms report that the database is not connected. They do not silently discard submissions or claim an email was sent.
 
-The Contact, Events, Marketplace and Donate pages have forms. The forms submit to `contact.php`, which validates the fields and emails the enquiry to `info@specialolympicspapuanewguinea.org`. The receiving inbox was supplied by SOPNG for this site. Enquiries are not saved in a website database.
+## Upload to Hostinger
 
-The form handler uses PHP's `mail()` function. Hostinger must have outbound PHP email enabled for the messages to be delivered. If Hostinger does not deliver the messages, configure the account's recommended SMTP mailer before launch.
+Extract the ZIP and upload its contents to the domain's `public_html` folder so `index.html`, PHP files, `site.css`, `site.js` and the `assets` folder sit directly in `public_html`. Keep PHP enabled. Do not preview `index.html` from inside the ZIP; extract it or use the hosted website so styles, images and PHP handlers load.
 
-## Hostinger upload
+## Content notes
 
-1. Extract the ZIP on your computer.
-2. In Hostinger File Manager, open the domain's `public_html` folder.
-3. Upload the *contents* of the extracted website folder so `index.html`, `contact.php`, `site.css`, `site.js` and `assets` sit directly in `public_html`.
-4. Keep PHP enabled on the hosting plan so the forms can submit.
-5. Open the live domain, check the pages and submit a real test enquiry to confirm Hostinger can send mail to the team inbox.
-
-Do not preview the site by opening `index.html` from inside the ZIP. Extract it first or preview it on the hosted domain so the browser can find the styles, images and PHP form handler.
-
-## Maintenance notes
-
-- Update `form-config.php` if SOPNG changes the contact inbox.
-- Marketplace listings do not include prices or an online checkout. Confirm prices, sizes, availability and ordering details with the SOPNG team.
-- Update the placeholder names and positions in `volunteers.html` when the volunteer roster is ready.
-- The Events page deliberately asks visitors to contact SOPNG for current event dates; no calendar or event schedule was supplied for this redesign.
-- The Donate page collects enquiries only. It does not collect payment details or process donations online.
+- Marketplace listings show the supplied merchandise photos and collect questions; they do not set prices or process checkout.
+- Event dates are not invented. Visitors are asked to contact SOPNG for current details.
+- Volunteer names and roles should be added when the roster is confirmed.
+- The page guide answers common navigation questions locally. It does not send visitors' questions to an AI service.
+- The social links point to SOPNG's Facebook, Instagram and LinkedIn profiles.
 
